@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --vp-c-brand: #10b981;
+  --vp-c-brand-light: #34d399;
+  --vp-c-brand-dark: #059669;
+  
+  /* Light mode */
+  --vp-c-bg: #ffffff;
+  --vp-c-bg-soft: #f3f4f6;
+  --vp-c-text: #1f2937;
+  --vp-c-text-soft: #6b7280;
+  --vp-c-card: #ffffff;
+}
+
+:root.dark {
+  --vp-c-bg: #1a1b1e;
+  --vp-c-bg-soft: #2a2b2e;
+  --vp-c-text: #e5e7eb;
+  --vp-c-text-soft: #9ca3af;
+  --vp-c-card: #27282b;
+}
+
+@layer components {
+  .VPNav {
+    @apply bg-[var(--vp-c-bg)] border-b border-gray-200 dark:border-gray-800;
+  }
+
+  .category-card {
+    @apply p-6 rounded-lg bg-[var(--vp-c-card)] border border-gray-200 dark:border-gray-800 
+           hover:shadow-lg transition-all duration-300 cursor-pointer
+           hover:transform hover:-translate-y-1;
+  }
+
+  .category-title {
+    @apply text-2xl font-bold text-[var(--vp-c-text)] mb-2;
+  }
+
+  .category-description {
+    @apply text-[var(--vp-c-text-soft)] mb-4;
+  }
+
+  .category-count {
+    @apply text-sm text-[var(--vp-c-text-soft)];
+  }
+
+  .arabic-text {
+    @apply font-['Amiri'] leading-loose text-2xl text-[var(--vp-c-text)];
+  }
+
+  .dua-card {
+    @apply rounded-lg bg-[var(--vp-c-card)] border border-gray-200 dark:border-gray-800 
+           p-6 mb-4 hover:shadow-lg transition-all duration-300;
+  }
+
+  .search-input {
+    @apply w-full px-4 py-2 rounded-lg bg-[var(--vp-c-bg-soft)] 
+           border border-gray-200 dark:border-gray-800
+           focus:ring-2 focus:ring-green-500 outline-none
+           text-[var(--vp-c-text)];
+  }
+}
+
+body {
+  @apply bg-[var(--vp-c-bg)] text-[var(--vp-c-text)];
+}
